@@ -1,4 +1,4 @@
-function printHTML() {
+function add() {
   const name = document.getElementById("name").value;
   const profits = document.getElementById("profits").value;
   const views = document.getElementById("views").value;
@@ -9,14 +9,6 @@ function printHTML() {
       <div id="profits1">${profits}</div>
       <div id="views1">${views}</div>
     </section>`;
-  document.getElementById("card").style.backgroundImage = `${photo}`;
-}
-function add() {
-  const name = document.getElementById("name").value;
-  const profits = document.getElementById("profits").value;
-  const views = document.getElementById("views").value;
-  const photo = document.getElementById("photo").value;
-
   class Movie {
     constructor(namE, profitS, viewS, photO) {
       this.namE = namE;
@@ -27,7 +19,7 @@ function add() {
   }
   let movis = [new Movie(name, profits, views, photo)];
   let json = JSON.stringify(movis);
-  printHTML();
+
   console.log(movis);
   console.log(json);
 }

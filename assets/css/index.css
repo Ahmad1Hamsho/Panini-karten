@@ -1,0 +1,106 @@
+body {
+  background-image: url(https://images.unsplash.com/photo-1505686994434-e3cc5abf1330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80);
+  background-size: cover;
+  background-repeat: no-repeat no-repeat;
+}
+
+.form1 {
+  font-weight: bolder;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+label {
+  color: rgb(255, 255, 255);
+  font-size: 1.4em;
+}
+input {
+  background-color: rgba(0, 0, 0, 0.39);
+  border-radius: 20px;
+  color: white;
+  font-size: 1.4em;
+  text-align: center;
+  border: none;
+  height: 4.6%;
+  width: 30vh;
+  padding: 0;
+}
+button {
+  background-color: rgba(0, 0, 0, 0.39);
+  border-radius: 20px;
+  color: white;
+  font-size: 1.4em;
+  text-align: center;
+  border: none;
+  font-weight: bolder;
+  box-shadow: 4px 4px 8px black;
+  width: 10vh;
+}
+input:focus {
+  outline: none;
+}
+button:focus {
+  outline: none;
+}
+input::placeholder {
+  color: rgba(255, 255, 255, 0.678);
+}
+
+#card {
+  position: relative;
+  height: 50vh;
+  width: 20vw;
+  box-shadow: 5px 5px 8px black;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  grid-template-rows: 50px;
+
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 50px;
+}
+#name1 {
+  border-radius: 20px 0 0 20px;
+  background-color: rgba(0, 0, 0, 0.534);
+  text-transform: uppercase;
+  grid-row: span 3;
+  color: white;
+  writing-mode: vertical-rl;
+  text-align: center;
+  font-size: 6vh;
+}
+#profits1 {
+  background-color: rgba(0, 0, 0, 0.534);
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  font-size: 6vh;
+}
+#profits1:after {
+  content: " $";
+  color: goldenrod;
+}
+#views1 {
+  border-radius: 0 20px 20px 0;
+  background-color: rgba(0, 0, 0, 0.534);
+  text-transform: uppercase;
+  color: white;
+  writing-mode: vertical-rl;
+  text-align: center;
+  font-size: 6vh;
+  grid-row: span 3;
+}
+#views1:after {
+  content: " 👀";
+  font-size: 5vh;
+}

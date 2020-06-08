@@ -8,14 +8,17 @@
   </head>
   <body>
     <section class="form1">
-      <label for="">Name:<input type="text" id="name" /></label>
+      <label for="">Name:<input type="text" id="name" required /></label>
       <label for="">Profits:<input type="number" id="profits" /></label>
       <label for="">Views:<input type="number" id="views" /></label>
       <label for="">Photo:<input type="text" id="photo" /></label>
-
       <button onclick="add()">Add</button>
+      <button id="search-button">🔍</button>
+      <button onclick="imp()" id="import-button">⬇</button>
+      <button onclick="download()">json File</button>
     </section>
     <section id="cards"></section>
+    <section id="search-cards"></section>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

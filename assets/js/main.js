@@ -17,17 +17,7 @@ class Movie {
 }
 const area = document.createElement("textarea");
 document.body.appendChild(area);
-/* function imp() {
-  var areaValue = (area.value = [new Movie(name, profits, views, photo)]);
-  console.log(areaValue);
-  areaValue.forEach((e) => {
-    cards.innerHTML += ` <section style="background-image: url(${e.photo});" id="card">
-    <div id="name1">${e.name}</div>
-    <div id="profits1">${e.profits}</div>
-    <div id="views1">${e.views}</div>
-    </section>`;
-  });
-} */
+
 function add() {
   const name = document.getElementById("name").value;
   const profits = document.getElementById("profits").value;
@@ -42,6 +32,16 @@ function add() {
   console.log(json);
 }
 let movis = [new Movie(name, profits, views, photo)];
+function imp() {
+  movis = JSON.parse(area.value);
+  movis.forEach((e) => {
+    cards.innerHTML += ` <section style="background-image: url(${e.photo});" id="card">
+    <div id="name1">${e.name}</div>
+    <div id="profits1">${e.profits}</div>
+    <div id="views1">${e.views}</div>
+    </section>`;
+  });
+}
 function download(content, fileName, contentType) {
   const a = document.createElement("a");
   const file = new Blob([content], { type: contentType });
@@ -63,6 +63,8 @@ searchButton.addEventListener("click", (e) => {
     .then((movies) => {
       console.log(movies);
       movies.results.forEach((movie) => {
+        searchCards.innerHTML = " ";
+        cards.innerHTML = " ";
         searchCards.innerHTML += ` <div id="info"><section style="background-image: url(https://image.tmdb.org/t/p/w500${movie.poster_path});" id="cardSearch"></section>
       <div id="info1"><h1 id="title">${movie.title}</h1>
       <h2 id="language">language: ${movie.original_language}</h2>

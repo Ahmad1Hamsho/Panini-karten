@@ -56,6 +56,8 @@ const key = "8e28548e74de121e46ea27a347ba233f";
 const baseURL = "https://api.themoviedb.org/3/search/movie";
 const searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("click", (e) => {
+  searchCards.innerHTML = " ";
+  cards.innerHTML = " ";
   const q = document.querySelector("#name").value;
   console.log("Searching for ", q);
   fetch(`${baseURL}?api_key=${key}&query=${q}`)
@@ -63,8 +65,6 @@ searchButton.addEventListener("click", (e) => {
     .then((movies) => {
       console.log(movies);
       movies.results.forEach((movie) => {
-        searchCards.innerHTML = " ";
-        cards.innerHTML = " ";
         searchCards.innerHTML += ` <div id="info"><section style="background-image: url(https://image.tmdb.org/t/p/w500${movie.poster_path});" id="cardSearch"></section>
       <div id="info1"><h1 id="title">${movie.title}</h1>
       <h2 id="language">language: ${movie.original_language}</h2>
